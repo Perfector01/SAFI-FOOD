@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFI FOODS</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar img {
+    height: 40px;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 0; /* Remove any bottom margin */
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.content {
+    min-height: 100vh;
+    width: 97%;
+    color: black;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: 50px;
+    margin-top: 0; /* Remove any top margin */
+    background-color: #fff;
+}
+
+.content.active {
+    display: flex;
+}
+
+.content h2 {
+    margin: 0;
+    font-size: 50px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #870f0f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.contact {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.featured-products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.testimonial {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.cta {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cta a {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+}
+
+.cta a:hover {
+    background-color: #555;
+}
+
+
+.promo-banner {
+    background-color: #870f0f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .navbar a {
+        padding: 10px;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .content {
+        padding: 20px;
+    }
+    .content h2 {
+        font-size: 36px;
+   }
+}
+    </style>
+    <script>
+        window.onload = function() {
+            showSection('home');
+        }
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.content');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/SAFI FOODS.png" alt="SAFI FOODS Logo">
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="#products" onclick="showSection('products')">Products</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
+        <a href="#Tenders" onclick="showSection('Tenders')">Tenders</a>
+    </div>
+
+    <div class="hero">
+        <h1>Welcome to SAFI FOOD PRODUCTION LTD</h1>
+        <p>Premium Quality Beef Meat</p>
+        <p>We deliver to your designated location</p>
+    </div>
+    
+    <div id="home" class="content active">
+        <h2>Home</h2>
+        <p>Welcome to SAFI FOODS, your source for the best quality beef meat.</p>
+        
+        <div class="featured-products">
+            <div class="product">
+                <img src="images/beef.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>High-quality steak</p>
+            </div>
+            <div class="product">
+                <img src="images/butcherman.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Fresh boned meat</p>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <h3>What Our Customers Say</h3>
+            <p>"SAFI FOODS provides the best quality meat. Highly recommended!" - Jane Doe</p>
+        </div>
+        
+        <div class="cta">
+            <a href="#products" onclick="showSection('products')">Order Now</a>
+        </div>
+
+        
+    </div>
+    
+    <div id="about" class="content">
+        <h2>About Us</h2>
+        <p>SAFI FOODS is committed to providing the highest quality beef meat.</p>
+        <p>Our products are sourced from trusted farms to ensure freshness and premium quality.</p>
+        <p>We supply beef meat around Murang'a and its surroundings.</p>
+        <p>We offer both steak and boned meat.</p>
+    </div>
+    
+    <div id="contact" class="content">
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>We are located in Mukuyu Town next to Alpa Petrol Station</p>
+            <p>P.O BOX 84-10200 MURANG’A</p><br><br>
+            <p>If you have any questions or need more information, please call our customer care for inquiries:</p>
+            <p><strong><a href="tel:+254799602333">Customer Care Number: +254799602333</a></strong></p>
+            <p>We are also available via WhatsApp, Click the whatsapp Icon below to chat with us:</p>
+            <a href="https://wa.me/qr/HBQ2UISX7ZXLB1" target="_blank"><img src="images/whatsappIcon.png" alt="WhatsApp Icon"></a>
+        </div>
+    </div>
+    <div id="Tenders" class="content">
+        <h2>Tenders</h2>
+        <h1>HOW TO OBTAIN ORDER TO SUPPLY ANIMALS TO SAFI FOOD PRODUCTION LTD</h1>
+        <p>All farmers are encouraged to bring their animals. Farmers who express their interest in supplying animals to SAFI FOODS will be given an order (LPO) to deliver animals based on their capacity and the delivery schedule. They will also be issued with a "No Objection" Permit which will be taken to the county veterinary Office to obtain a Movement Permit which accompany animals delivered to SAFI FOODS. If a farmer is unable to pick these documents physically from SAFI FOODS outlet, a softcopy of the Local Purchase Order (LPO) and the No Objection permit will be sent by phone or email address to the farmers to facilitate the process.</p>
+        <p>Once the farmer arrives with the animals at SAFI FOODS, the animals will be accessed by the acceptance and inspection committee and weighed for payment with the presence of the farmer.</p><br><br><br>
+        <h1>SPECIFICATION OF CATTLE BEING PURCHASED BY SAFI FOOD PRODUCTION LTD.</h1>
+        <p>The animals should be of good health with no signs of unthriftyness (sickness). The minimum encouraged weight is 200kg for cattle. The animals should not be more than 5 years. Female animals should should not be pregnant or in milk.</p>
+        <p>The animals should be branded on the recommended sites. They should not have any gross lesions due to mishandling, wounds or sickness.</p>
+        <p>Farmers are advised to adhere to animal welfare regulations during transportation to avoid injuries or loss of animals during transit.</p>
+    </div>
+    <div id="products" class="content">
+        <h2>Our Products</h2>
+        <p>We specialize in producing and supplying top-quality beef meat. All our products are carefully selected and processed to meet the highest standards.</p>
+        <h2>Place Your Order</h2>
+        <div>
+            <p>Call this number to place your order: <strong><a href="tel:+254799602333">+254799602333</a></strong></p>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2023 SAFI FOODS. All rights reserved.
+    </div>
+</body>
+</html>
